@@ -1,0 +1,17 @@
+@startuml
+actor User
+entity "Job Application Tracker" as System
+database "Database" as DB
+
+User -> System : Access main page
+System -> User : Display CRUD buttons (Create, Read, Update, Delete)
+
+User -> System : Select "Create" to add job application
+System -> User : Display form for job application data
+
+User -> System : Submit job application data
+System -> DB : Save job application data
+DB -> System : Confirm data saved
+System -> User : Display confirmation message
+
+@enduml
